@@ -70,6 +70,19 @@ void generateKeyTable(char key[], int ks, char keyT[5][5])
     }
 }
 
+void printKeyTable(char keyT[5][5])
+{
+    printf("Key Table:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            printf("%c ", keyT[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 void search(char keyT[5][5], char a, char b, int arr[])
 {
     int i, j;
@@ -175,6 +188,7 @@ void decryptByPlayfairCipher(char str[], char key[])
     ps = removeSpaces(str, ps);
 
     generateKeyTable(key, ks, keyT);
+    printKeyTable(keyT);
 
     decrypt(str, keyT, ps);
 }
@@ -194,6 +208,7 @@ void encryptByPlayfairCipher(char str[], char key[])
     ps = prepare(str, ps);
 
     generateKeyTable(key, ks, keyT);
+    printKeyTable(keyT);
 
     encrypt(str, keyT, ps);
 }
@@ -202,18 +217,21 @@ int main()
 {
     char str[SIZE], key[SIZE];
 
-    strcpy(key, "test");
+    printf("Enter key text: ");
+    fgets(key, SIZE, stdin);
+    key[strcspn(key, "\n")] = '\0';
     printf("Key text: %s\n", key);
 
-    strcpy(str, "kishor");
+    printf("Enter plain text: ");
+    fgets(str, SIZE, stdin);
+    str[strcspn(str, "\n")] = '\0';
     printf("Plain text: %s\n", str);
-    
 
     encryptByPlayfairCipher(str, key);
     printf("Cipher text: %s\n", str);
 
     decryptByPlayfairCipher(str, key);
-    printf("Decrypted text: %s", str);
+    printf("Decrypted text: %s\n", str);
 
     return 0;
 }
