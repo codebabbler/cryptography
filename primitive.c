@@ -6,17 +6,7 @@
  * If all the values are unique and cover the range, then g is a primitive root modulo p.
  * If there are duplicates or missing values, then g is not a primitive root modulo p.
  */
-#include <stdio.h>
-#include <stdbool.h>
 
-
-double power(int base, int exponent) {
-    double result = 1;
-    for (int i = 0; i < exponent; i++) {
-        result *= base;
-    }
-    return result;
-}
 
 // bool isPrimitiveRoot(int p, int g) {
 //     int g_powers[p - 1];
@@ -36,6 +26,20 @@ double power(int base, int exponent) {
 //     }
 //     return true;
 // }
+
+
+#include <stdio.h>
+#include <stdbool.h>
+
+
+double power(int base, int exponent) {
+    double result = 1;
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+    return result;
+}
+
 
 bool isPrimitiveRoot(int p, int g) {
     int g_powers[p - 1];
@@ -58,6 +62,7 @@ bool isPrimitiveRoot(int p, int g) {
 
 int main() {
     int p, g;
+    printf("~~~~~~~~~~~~Miraj Aryal~~~~~~~~~~~~\n\n\n");
 
     printf("Enter a prime number (p): ");
     scanf("%d", &p);
