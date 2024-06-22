@@ -65,7 +65,7 @@ int power_mod(int base, int exponent, int modulus)
 // Code to demonstrate RSA algorithm
 int main()
 {
-      printf("~~~~~~~~~~~~Miraj Aryal~~~~~~~~~~~~\n\n\n");
+  printf("~~~~~~~~~~~~Miraj Aryal~~~~~~~~~~~~\n\n\n");
 	// Two random prime numbers
 	int p, q, n, euler_totient_function;
 	int e, d;
