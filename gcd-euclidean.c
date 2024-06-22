@@ -19,6 +19,7 @@ int swap(int *a, int *b)
 
 int main()
 {
+    printf("~~~~~~~~~~~~Miraj Aryal~~~~~~~~~~~~\n\n\n");
     int num1, num2;
 
     printf("Enter two positive integers: ");
@@ -28,11 +29,11 @@ int main()
         swap(&num1, &num2);
     }
     int gcd = euclidean(num1, num2);
-    printf("\ngcd(%d, %d): \n", num1, num2);
+    // printf("\ngcd(%d, %d): \n", num1, num2);
     printf("\nGCD of %d and %d is %d\n", num1, num2, gcd);
     if (gcd == 1)
     {
-        printf("The numbers are co-prime");
+        printf("The numbers are co-prime.\n");
     }
 
     return 0;
