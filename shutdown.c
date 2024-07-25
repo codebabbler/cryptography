@@ -7,16 +7,20 @@ int main()
     char validation,systemType;
     do
     {
-        printf("Choose Windows or UNIX(Linux/MacOS) system:");
+        printf("Choose Windows or UNIX(Linux/MacOS) system: ");
         scanf(" %c", &systemType);
     } while (!(systemType=='W'||systemType=='w'||systemType=='U'||systemType=='u'));
     
     if(systemType=='W'||systemType=='w'){
 
-        printf("Do you want to shutdown your pc now(y/n)?");
+        printf("Do you want to shutdown your pc now(y/n)? ");
         scanf(" %c", &validation);
 
          if(validation == 'y' || validation == 'Y')
+            printf("Shutting down now in\n");
+            for (int i =5;i>=1;i--){
+                printf("%d....\n",i);
+            }
             system("C:\\WINDOWS\\System32\\shutdown -s");
 
     }else if (systemType=='U'||systemType=='u'){
@@ -24,6 +28,10 @@ int main()
         printf("Do you want to shutdown your pc now(y/n)?");
         scanf(" %c", &validation);
         if(validation == 'y' || validation == 'Y')
+            printf("Shutting down now in\n");
+            for (int i =5;i>=1;i--){
+                printf("%d....\n",i);
+            }
             system("shutdown -h now");
     }
     return 0;
